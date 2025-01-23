@@ -52,7 +52,7 @@ get-service | findstr -i "pcasvc"; get-service | findstr -i "DPS"; get-service |
 Get-ChildItem -LiteralPath . -Recurse
 Get-ChildItem -Recurse > filelist.txt
 (Get-PSReadlineOption).HistorySavePath
-cd C:\Users\ganan\OneDrive\Desktop
+cd C:\Users\%username%\OneDrive\Desktop
 $file = Read-Host "Provide txts of SearchIndexer or Csrss or Explorer"
 if (-not (Test-Path $file -PathType Leaf)) {`
     Write-Host "Unidentified"`
