@@ -1,4 +1,3 @@
-1597231269
 get-service | findstr -i "pcasvc"; get-service | findstr -i "DPS"; get-service | findstr -i "Diagtrack"; get-service | findstr -i "sysmain"; get-service | findstr -i "eventlog"; get-service | findstr -i "sysmain"; get-service | findstr -i "eventlog"
 $outputDir = [System.IO.Path]::Combine([Environment]::GetFolderPath('Desktop'), 'sslook')`
 New-Item -Path $outputDir -ItemType Directory -Force`
