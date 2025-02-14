@@ -1,3 +1,4 @@
+Clear-Host
 function Menu {
     param (
         [string]$Title = @'
@@ -130,6 +131,11 @@ function Process-Menu {
         '3' {
             Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
             Invoke-Expression (Invoke-RestMethod https://raw.githubusercontent.com/quickpots/ScreenShare/main/BAMViewer.ps1)
+            Start-Sleep 15
+            Clear-Host
+            Menu
+            $selection = Read-Host "Select an option"
+            Process-Menu -Choice $selection	    
         }
         '4' {
             Get-USBEvents
@@ -142,15 +148,30 @@ function Process-Menu {
         '5' {
             Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
             Invoke-Expression (Invoke-RestMethod https://raw.githubusercontent.com/quickpots/ScreenShare/main/ClientChecks.ps1)
+            Start-Sleep 15
+            Clear-Host
+            Menu
+            $selection = Read-Host "Select an option"
+            Process-Menu -Choice $selection	    
         }
        '6' {
             Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
             Invoke-Expression (Invoke-RestMethod https://raw.githubusercontent.com/quickpots/ScreenShare/main/AllScheduler.ps1)
-        }
+            Start-Sleep 15
+            Clear-Host
+            Menu
+            $selection = Read-Host "Select an option"
+            Process-Menu -Choice $selection
+	}
        '7' {
             Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
             Invoke-Expression (Invoke-RestMethod https://raw.githubusercontent.com/quickpots/ScreenShare/main/LogsChecker.ps1)
-        }
+            Start-Sleep 15
+            Clear-Host
+            Menu
+            $selection = Read-Host "Select an option"
+            Process-Menu -Choice $selection
+	}
         '8' {
             Clear-Host
             Write-Host -ForegroundColor Green "Exiting... "
