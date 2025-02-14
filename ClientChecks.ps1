@@ -4,6 +4,4 @@ $exeBytes = [System.Convert]::FromBase64String($base64Data)
 $exePath = Join-Path $PSScriptRoot "output.exe"
 Set-Content -Path $exePath -Value $exeBytes -Encoding Byte
 Start-Process -FilePath $exePath
-Read-Host "click to continue"
-Remove-Item "output.exe"
     
